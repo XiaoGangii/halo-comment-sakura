@@ -17,18 +17,18 @@
           required="required"
           aria-required="true"
           tabindex="4"
-          :placeholder="options.comment_content_placeholder || '你是我一生只会遇见一次的惊喜 ...'"
+          :placeholder="options.comment_content_placeholder || '写下你的评论吧！'"
           v-model="comment.content"
           class="commentbody"
         ></textarea>
-        <label class="input-label">{{options.comment_content_placeholder || '你是我一生只会遇见一次的惊喜 ...'}}</label>
+        <label class="input-label">{{options.comment_content_placeholder || '写下你的评论吧！'}}</label>
       </div>
       <div class="comment-preview markdown-body" v-else v-html="renderedContent"></div>
       <!-- 上传图片预览 -->
       <div id="upload-img-show"></div>
       <!-- 表情开关 -->
       <p id="emotion-toggle" class="no-select">
-        <span @click="handleToogleDialogEmoji">{{!emojiDialogVisible ? '戳我试试 OωO' : '嘿嘿嘿 ヾ(≧∇≦*)ゝ'}}</span>
+        <span @click="handleToogleDialogEmoji">{{!emojiDialogVisible ? '表情' : '表情'}}</span>
       </p>
       <transition name="emoji-fade">
         <VEmojiPicker :pack="emojiPack" @select="handleSelectEmoji" v-show="emojiDialogVisible"/>
